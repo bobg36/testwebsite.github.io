@@ -1,16 +1,56 @@
-/* Selecting an HTML element by its tag name */
+/* Apply some basic styling to the body and headings */
 body {
-    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
-/* Selecting an element by its class name */
-.header {
-    background-color: #333;
+h1, h2 {
+    color: #333;
+}
+
+/* Style the header section */
+header {
+    background-color: #007BFF;
     color: white;
+    text-align: center;
+    padding: 30px;
 }
 
-/* Selecting an element by its ID */
-#main-content {
-    font-size: 16px;
+/* Style the project cards */
+#projects {
+    text-align: center;
+}
+
+.project {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* Style links */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Style the About Me section */
+#about {
+    background-color: #fff;
+    padding: 20px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
