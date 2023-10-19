@@ -1,0 +1,6 @@
+git checkout main
+
+git add .
+git commit -m "Your new commit message here"
+
+git push origin main
