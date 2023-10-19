@@ -1,0 +1,16 @@
+/* Selecting an HTML element by its tag name */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* Selecting an element by its class name */
+.header {
+    background-color: #333;
+    color: white;
+}
+
+/* Selecting an element by its ID */
+#main-content {
+    font-size: 16px;
+}
