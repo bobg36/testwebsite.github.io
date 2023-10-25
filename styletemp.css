@@ -12,7 +12,6 @@ body {
 }
 
 .table-wrapper {
-    width: calc(50%); /* 1:1 ratio for virgin and bred tables */
     max-height: 300px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
