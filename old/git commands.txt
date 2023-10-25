@@ -1,0 +1,11 @@
+git checkout main
+
+git add .
+git commit -m "Your new commit message here"
+
+git push origin main
+
+python -m http.server
+http://localhost:8000/
+
+testsetset
