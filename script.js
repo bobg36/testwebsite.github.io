@@ -46,5 +46,7 @@ function displayCSVData(file, tableId) {
         });
 }
 
-displayCSVData('data1.csv', 'data1-table');
-displayCSVData('data2.csv', 'data2-table');
+displayCSVData('virgin.csv', 'virgin-table');
+displayCSVData('bred.csv', 'bred-table');
+displayCSVData('floor.csv', 'floor-table');
+displayCSVData('sales.csv', 'sales-table');

@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #333; /* Dark background color */
-    color: #fff; /* Light text color */
+    background-color: #333;
+    color: #fff;
     margin: 0;
     padding: 0;
 }
@@ -12,21 +12,30 @@ body {
 }
 
 .table-wrapper {
-    width: 48%;
+    width: 10%;
     max-height: 300px;
-    max-width: 100%; /* Set a maximum width for horizontal scrolling */
     margin-bottom: 20px;
     border: 1px solid #ddd;
     padding: 10px;
     overflow-y: auto;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    background-color: #444; /* Slightly lighter background for tables */
+    overflow-x: auto;
+    background-color: #444;
+}
+
+#virgin-table,
+#bred-table {
+    width: 10%; /* 1 part out of 10 */
+}
+
+#floor-table,
+#sales-table {
+    width: 40%; /* 4 parts out of 10 */
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
-    background-color: transparent; /* Transparent background */
+    background-color: transparent;
 }
 
 th, td {
@@ -51,15 +60,15 @@ th {
 }
 
 .table-wrapper::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the thumb (scrollable area) */
+    background: #888;
     border-radius: 6px;
 }
 
 .table-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color of the thumb on hover */
+    background: #555;
 }
 
 .table-wrapper::-webkit-scrollbar-track {
-    background: #ddd; /* Color of the track (non-scrollable area) */
+    background: #ddd;
     border-radius: 6px;
 }
