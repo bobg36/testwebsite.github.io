@@ -1,40 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const table = document.getElementById("csv-table");
+    // List of CSV files you want to load
+    const csvFiles = ["data/data1.csv", "data/data2.csv"];
 
-    // Replace 'data.csv' with the actual path to your CSV file.
-    const csvFilePath = 'data.csv';
+    // Function to load and parse CSV files
+    function loadCSVData(file) {
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                Papa.parse(data, {
+                    header: true,
+                    dynamicTyping: true,
+                    complete: function (results) {
+                        displayData(results.data);
+                    }
+                });
+            });
+    }
 
-    // Fetch the CSV file
-    fetch(csvFilePath)
-        .then((response) => response.text())
-        .then((data) => {
-            const rows = data.split("\n");
+    // Function to display data on the page
+    function displayData(data) {
+        const dataContainer = document.getElementById("data-container");
 
-            // Create the table headers from the first row
-            const headers = rows[0].split(",");
-            const headerRow = document.createElement("tr");
+        data.forEach(item => {
+            const itemDiv = document.createElement("div");
+            itemDiv.classList.add("data-item");
 
-            for (let header of headers) {
-                const th = document.createElement("th");
-                th.textContent = header;
-                headerRow.appendChild(th);
-            }
+            // Customize how you display each item from the CSV here
+            itemDiv.innerHTML = `
+                <h2>${item.name}</h2>
+                <p>${item.description}</p>
+            `;
 
-            table.appendChild(headerRow);
+            dataContainer.appendChild(itemDiv);
+        });
+    }
 
-            // Create table rows from the remaining data
-            for (let i = 1; i < rows.length; i++) {
-                const rowData = rows[i].split(",");
-                const row = document.createElement("tr");
-
-                for (let cellData of rowData) {
-                    const cell = document.createElement("td");
-                    cell.textContent = cellData;
-                    row.appendChild(cell);
-                }
-
-                table.appendChild(row);
-            }
-        })
-        .catch((error) => console.error("Error fetching CSV file:", error));
+    // Load data from CSV files
+    csvFiles.forEach(loadCSVData);
 });
