@@ -8,4 +8,7 @@ git push origin main
 python -m http.server
 http://localhost:8000/
 
+jekyll serve
+
+
 testsetset
