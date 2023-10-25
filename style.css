@@ -14,10 +14,13 @@ body {
 .table-wrapper {
     width: 48%;
     max-height: 300px;
+    max-width: 100%; /* Set a maximum width for horizontal scrolling */
     margin-bottom: 20px;
-    background-color: #444; /* Slightly lighter background for tables */
+    border: 1px solid #ddd;
     padding: 10px;
     overflow-y: auto;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    background-color: #444; /* Slightly lighter background for tables */
 }
 
 table {
@@ -27,18 +30,19 @@ table {
 }
 
 th, td {
+    border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    height: 1em; /* Set a fixed height for rows */
-    white-space: nowrap; /* Prevent text wrapping */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Add ellipsis for overflow text */
-    border: none; /* Remove table cell borders */
+    height: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: none;
 }
 
 th {
-    background-color: #666; /* Slightly lighter background for table headers */
-    border: none; /* Remove table cell borders */
+    background-color: #666;
+    border: none;
 }
 
 /* Webkit-based scrollbar styling */
