@@ -97,13 +97,13 @@ function addImageToTables(imageUrl) {
     image.src = imageUrl;
     image.alt = 'Table Image'; // Add an alt text for accessibility
 
-    const tableContainers = document.querySelectorAll('.table-container');
-    const tableHeight = document.getElementById('virgin-table').clientHeight; // Get the height of one of the tables (assuming they have the same height)
+    // const tableContainers = document.querySelectorAll('.table-container');
+    // const tableHeight = document.getElementById('virgin-table').clientHeight; // Get the height of one of the tables (assuming they have the same height)
 
-    image.style.height = (tableHeight*0.5) + 'px'; // Set the image's height to match the table's height
-    image.style.width = 'auto';
+    // image.style.height = (tableHeight*0.5) + 'px'; // Set the image's height to match the table's height
+    // image.style.width = 'auto';
 
-    tableContainers.forEach(container => {
-        container.insertBefore(image.cloneNode(true), container.firstChild);
-    });
+    // tableContainers.forEach(container => {
+    //     container.insertBefore(image.cloneNode(true), container.firstChild);
+    // });
 }

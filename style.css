@@ -1,6 +1,6 @@
 #dynamicImage {
-    max-width: 100%; /* Adjust the maximum width as needed */
-    height: auto;    /* This maintains the aspect ratio */
+    flex: 1; /* Allow the image to take up equal width */
+    height: 100%; /* Make the image width match the container's width */
 }
 
 body {
@@ -12,51 +12,63 @@ body {
 }
 
 .table-container {
+    height: 200px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
 }
 
-.table-wrapper {
-    width: calc(50%); /* 1:1 ratio for virgin and bred tables */
-    max-height: 300px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    overflow-y: auto;
-    overflow-x: auto;
+.image-wrapper{
+    flex:auto;
+    width:15%;
     background-color: #444;
-} 
-
-#virgin-table,
-#bred-table {
-    width: 10%; /* 1:1 ratio for virgin and bred tables */
 }
 
-#floor-table,
-#sales-table {
-    width: 40%; /* 4:4 ratio for floor and sales tables */
+.table-wrapper1 {
+    flex:auto;
+    width: 7%;
+    overflow:hidden;
+    background-color:#555
 }
+
+.table-wrapper2 {
+    flex:auto;
+    width: 40%;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+
+
 
 table {
-    border-collapse: collapse;
-    width: 100%;
-    background-color: transparent;
+    border-collapse:separate;
+    background-color:transparent;
 }
 
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    height: 1em;
+    height: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     border: none;
+    font-size: 10px; /* Set the font size to 10 pixels or any size you prefer */
 }
 
 th {
     background-color: #666;
     border: none;
+    font-family: 'Arial', Arial, Helvetica, sans-serif; /* Change 'Your Desired Font' to the desired font name */
+    color: #fff; /* Change the color as needed */
+}
+
+h1 {
+    font-family: 'Arial', Arial, Helvetica, sans-serif; 
+    font-size: 15px;
+    color: #ffffff;
+    margin: 5px; 
 }
 
 /* Webkit-based scrollbar styling */
