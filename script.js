@@ -107,3 +107,35 @@ function addImageToTables(imageUrl) {
     //     container.insertBefore(image.cloneNode(true), container.firstChild);
     // });
 }
+document.addEventListener("DOMContentLoaded", function () {
+    // Your code here
+
+
+    // Function to make the cells in the first column of a table clickable with dynamic URLs
+    function makeFirstColumnCellsClickable(tableId) {
+        const table = document.getElementById(tableId);
+        const rows = table.getElementsByTagName('tr');
+
+        for (let i = 0; i < rows.length; i++) {
+            const firstCell = rows[i].getElementsByTagName('td')[0]; // Select the first cell (index 0)
+            if (firstCell) {
+                const cellContent = firstCell.textContent;
+                // Create an anchor tag with a dynamic URL
+                const anchor = document.createElement('a');
+                anchor.href = `https://app.axieinfinity.com/marketplace/axies/${encodeURIComponent(cellContent)}`;
+                console.log(anchor.href)
+                anchor.textContent = cellContent;
+                // Replace the content of the first cell with the anchor
+                firstCell.innerHTML = '';
+                firstCell.appendChild(anchor);
+            }
+        }
+    }
+
+    // Call the function for the first column of each table
+    makeFirstColumnCellsClickable('virgin-table');
+    makeFirstColumnCellsClickable('bred-table');
+    makeFirstColumnCellsClickable('floor-table');
+    makeFirstColumnCellsClickable('sales-table');
+
+});
