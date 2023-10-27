@@ -28,31 +28,6 @@ function processCSV() {
 processCSV();
 
 
-
-// Function to toggle column visibility
-function toggleColumnVisibility(tableId, column) {
-    const table = document.getElementById(tableId);
-    const columnIndex = Array.from(table.rows[0].cells).findIndex(cell => cell.textContent === column);
-
-    if (columnIndex >= 0) {
-        const rows = table.rows;
-        for (let i = 0; i < rows.length; i++) {
-            const cell = rows[i].cells[columnIndex];
-            cell.style.display = cell.style.display === 'none' ? '' : 'none';
-        }
-    }
-}
-
-// Add event listeners to the buttons
-const columnButtons = document.querySelectorAll('.column-buttons button');
-columnButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const tableId = button.parentElement.getAttribute('data-table');
-        const column = button.getAttribute('data-column');
-        toggleColumnVisibility(tableId, column);
-    });
-});
-
 // Function to display CSV data in a table
 function displayCSVData(file, tableId) {
     fetch(`data/${file}`)
@@ -91,51 +66,3 @@ displayCSVData('bred.csv', 'bred-table');
 displayCSVData('floor.csv', 'floor-table');
 displayCSVData('sales.csv', 'sales-table');
 
-// Function to add an image to the left of all tables
-function addImageToTables(imageUrl) {
-    const image = document.createElement('img');
-    image.src = imageUrl;
-    image.alt = 'Table Image'; // Add an alt text for accessibility
-
-    // const tableContainers = document.querySelectorAll('.table-container');
-    // const tableHeight = document.getElementById('virgin-table').clientHeight; // Get the height of one of the tables (assuming they have the same height)
-
-    // image.style.height = (tableHeight*0.5) + 'px'; // Set the image's height to match the table's height
-    // image.style.width = 'auto';
-
-    // tableContainers.forEach(container => {
-    //     container.insertBefore(image.cloneNode(true), container.firstChild);
-    // });
-}
-document.addEventListener("DOMContentLoaded", function () {
-    // Your code here
-
-
-    // Function to make the cells in the first column of a table clickable with dynamic URLs
-    function makeFirstColumnCellsClickable(tableId) {
-        const table = document.getElementById(tableId);
-        const rows = table.getElementsByTagName('tr');
-
-        for (let i = 0; i < rows.length; i++) {
-            const firstCell = rows[i].getElementsByTagName('td')[0]; // Select the first cell (index 0)
-            if (firstCell) {
-                const cellContent = firstCell.textContent;
-                // Create an anchor tag with a dynamic URL
-                const anchor = document.createElement('a');
-                anchor.href = `https://app.axieinfinity.com/marketplace/axies/${encodeURIComponent(cellContent)}`;
-                console.log(anchor.href)
-                anchor.textContent = cellContent;
-                // Replace the content of the first cell with the anchor
-                firstCell.innerHTML = '';
-                firstCell.appendChild(anchor);
-            }
-        }
-    }
-
-    // Call the function for the first column of each table
-    makeFirstColumnCellsClickable('virgin-table');
-    makeFirstColumnCellsClickable('bred-table');
-    makeFirstColumnCellsClickable('floor-table');
-    makeFirstColumnCellsClickable('sales-table');
-
-});
